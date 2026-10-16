@@ -1,0 +1,44 @@
+{
+    "name": "mcp-kibana",
+    "version": "1.0.0",
+    "description": "MCP server for Kibana APM: services, transaction groups, error groups, trace samples and trace waterfall",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CynepHy6/mcp-kibana.git"
+    },
+    "bugs": {
+        "url": "https://github.com/CynepHy6/mcp-kibana/issues"
+    },
+    "homepage": "https://github.com/CynepHy6/mcp-kibana#readme",
+    "main": "build/index.js",
+    "type": "module",
+    "bin": {
+        "mcp-kibana": "./build/index.js"
+    },
+    "scripts": {
+        "start": "node ./build/index.js"
+    },
+    "files": [
+        "build",
+        "LICENSE"
+    ],
+    "keywords": [
+        "mcp",
+        "kibana",
+        "apm",
+        "elastic",
+        "cursor",
+        "npx"
+    ],
+    "author": "",
+    "license": "Apache-2.0",
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.15.0",
+        "axios": "^1.11.0",
+        "dotenv": "^16.4.7",
+        "zod": "^3.24.2"
+    }
+}
