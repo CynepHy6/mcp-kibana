@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Build output
+build/
+dist/
+out/
+
+# Environment variables
+.env
+
+# Cursor
+.cursor/
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
