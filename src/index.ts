@@ -39,6 +39,7 @@ import {
     listApmTransactionsSchema,
 } from "./tools/apm/list-apm-transactions.js";
 import { MCP_SERVER_INSTRUCTIONS } from "./utils/mcp-server-instructions.js";
+import { toolAnnotations } from "./utils/tool-annotations.js";
 import { validateKibanaConfig } from "./utils/validation.js";
 
 const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
@@ -63,6 +64,7 @@ server.tool(
     "list-apm-services",
     "Kibana APM services for a time window: latencyMs, errorRate, throughputPerMinute (transactions per minute, as in the APM UI). Sorted by throughput.",
     listApmServicesSchema,
+    toolAnnotations("list-apm-services"),
     listApmServicesHandler(kibana, kibanaConfig) as any,
 );
 
@@ -70,6 +72,7 @@ server.tool(
     "list-apm-transactions",
     "Transaction groups of one Kibana APM service: name, latencyMs, errorRate, throughputPerMinute, impact.",
     listApmTransactionsSchema,
+    toolAnnotations("list-apm-transactions"),
     listApmTransactionsHandler(kibana, kibanaConfig) as any,
 );
 
@@ -77,6 +80,7 @@ server.tool(
     "list-apm-errors",
     "Error groups of one Kibana APM service: groupId, name, occurrences, culprit, type.",
     listApmErrorsSchema,
+    toolAnnotations("list-apm-errors"),
     listApmErrorsHandler(kibana, kibanaConfig) as any,
 );
 
@@ -84,6 +88,7 @@ server.tool(
     "list-apm-trace-samples",
     "traceId and transactionId of sampled traces for one transaction group, the input for get-apm-trace. minDurationMs / maxDurationMs keep only requests in that duration range.",
     listApmTraceSamplesSchema,
+    toolAnnotations("list-apm-trace-samples"),
     listApmTraceSamplesHandler(kibana, kibanaConfig) as any,
 );
 
@@ -91,6 +96,7 @@ server.tool(
     "get-apm-trace",
     "Waterfall of one Kibana APM trace: transactions and spans with durationUs and offsetUs from the entry transaction start.",
     getApmTraceSchema,
+    toolAnnotations("get-apm-trace"),
     getApmTraceHandler(kibana, kibanaConfig) as any,
 );
 

@@ -2,6 +2,12 @@
 
 Формат основан на [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/); нумерация версий — [Semantic Versioning](https://semver.org/lang/ru/).
 
+## [1.1.0] - 2026-11-04
+
+### Добавлено
+
+- У каждого инструмента есть MCP-аннотации: все пять (`list-apm-services`, `list-apm-transactions`, `list-apm-errors`, `list-apm-trace-samples`, `get-apm-trace`) помечены `readOnlyHint: true` — они только читают Kibana APM, а `POST /internal/search/es` в `get-apm-trace` лишь ищет корневую транзакцию. Клиент больше не угадывает по имени: инструменты идут без вопроса человеку и работают в режимах только чтения.
+
 ## [1.0.0] - 2026-10-16
 
 ### Добавлено
